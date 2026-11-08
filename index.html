@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Harshini Nujella</title>
+  <meta name="description" content="Harshini Nujella builds AI and computer vision systems. M.Eng. Data Science at UCLA.">
+
+  <!-- Fonts: Bricolage Grotesque (headings), Inter (body), Silkscreen (pixel labels) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Inter:wght@400;500;600&family=Silkscreen&display=swap">
+
+  <link rel="stylesheet" href="style.css">
+  <!-- Little sprout icon in the browser tab -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21v-9M12 12c0-4 3-6 7-6 0 4-3 6-7 6zM12 14c0-3-2.5-5-6-5 0 3 2.5 5 6 5z' fill='none' stroke='%2333703A' stroke-width='2' stroke-linecap='round'/></svg>">
+</head>
+<body>
+    <!-- Reusable pixel plants for the seed packets (invisible on its own) -->
+  <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+    <symbol id="sprig-lavender" viewBox="0 0 8 16">
+      <rect x="3" y="0" width="1" height="1" fill="#A88BD6"/>
+      <rect x="2" y="1" width="1" height="1" fill="#7E5DB8"/><rect x="4" y="1" width="1" height="1" fill="#7E5DB8"/>
+      <rect x="3" y="2" width="1" height="1" fill="#A88BD6"/>
+      <rect x="2" y="3" width="1" height="1" fill="#A88BD6"/><rect x="4" y="3" width="1" height="1" fill="#7E5DB8"/>
+      <rect x="3" y="4" width="1" height="1" fill="#7E5DB8"/>
+      <rect x="2" y="5" width="1" height="1" fill="#7E5DB8"/><rect x="4" y="5" width="1" height="1" fill="#A88BD6"/>
+      <rect x="3" y="5" width="1" height="11" fill="#5E7F46"/>
+      <rect x="1" y="11" width="2" height="1" fill="#7A9A5C"/>
+      <rect x="4" y="9" width="2" height="1" fill="#7A9A5C"/>
+    </symbol>
+
+    <symbol id="sprig-broccoli" viewBox="0 0 8 16">
+      <!-- crown -->
+      <rect x="2" y="0" width="1" height="1" fill="#3F8443"/>
+      <rect x="4" y="0" width="2" height="1" fill="#3F8443"/>
+      <rect x="1" y="1" width="6" height="1" fill="#3F8443"/>
+      <rect x="0" y="2" width="8" height="3" fill="#3F8443"/>
+      <rect x="1" y="5" width="6" height="1" fill="#3F8443"/>
+      <!-- light florets -->
+      <rect x="2" y="1" width="1" height="1" fill="#6DB867"/>
+      <rect x="5" y="1" width="1" height="1" fill="#6DB867"/>
+      <rect x="4" y="2" width="1" height="1" fill="#6DB867"/>
+      <rect x="1" y="3" width="1" height="1" fill="#6DB867"/>
+      <rect x="6" y="3" width="1" height="1" fill="#6DB867"/>
+      <rect x="3" y="4" width="1" height="1" fill="#6DB867"/>
+      <!-- dark florets -->
+      <rect x="3" y="2" width="1" height="1" fill="#2F6B34"/>
+      <rect x="5" y="4" width="1" height="1" fill="#2F6B34"/>
+      <rect x="1" y="4" width="1" height="1" fill="#2F6B34"/>
+      <!-- stalk -->
+      <rect x="2" y="6" width="4" height="1" fill="#9CCB78"/>
+      <rect x="3" y="7" width="2" height="7" fill="#9CCB78"/>
+      <rect x="4" y="7" width="1" height="7" fill="#7FB05E"/>
+      <rect x="2" y="13" width="4" height="2" fill="#9CCB78"/>
+      <rect x="4" y="13" width="2" height="2" fill="#7FB05E"/>
+      <rect x="1" y="10" width="2" height="1" fill="#5FA35C"/>
+    </symbol>
+
+    <symbol id="sprig-rose" viewBox="0 0 8 16">
+      <!-- bloom -->
+      <rect x="2" y="0" width="4" height="1" fill="#9E1B32"/>
+      <rect x="1" y="1" width="6" height="3" fill="#C42E46"/>
+      <rect x="2" y="4" width="4" height="1" fill="#9E1B32"/>
+      <!-- spiral -->
+      <rect x="3" y="1" width="2" height="1" fill="#E86A7E"/>
+      <rect x="2" y="2" width="1" height="1" fill="#E86A7E"/>
+      <rect x="4" y="2" width="1" height="1" fill="#9E1B32"/>
+      <rect x="5" y="2" width="1" height="1" fill="#E86A7E"/>
+      <rect x="3" y="3" width="2" height="1" fill="#E86A7E"/>
+      <!-- sepals -->
+      <rect x="2" y="5" width="4" height="1" fill="#3F8443"/>
+      <!-- stem, thorns, leaves -->
+      <rect x="3" y="6" width="1" height="10" fill="#3F6B2F"/>
+      <rect x="2" y="7" width="1" height="1" fill="#3F6B2F"/>
+      <rect x="4" y="13" width="1" height="1" fill="#3F6B2F"/>
+      <rect x="5" y="8" width="2" height="1" fill="#5FA35C"/>
+      <rect x="4" y="9" width="3" height="1" fill="#3F8443"/>
+      <rect x="0" y="11" width="2" height="1" fill="#5FA35C"/>
+      <rect x="1" y="12" width="2" height="1" fill="#3F8443"/>
+    </symbol>
+  </svg>
+
+  <!-- ===================== HEADER / NAV ===================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="logo">
+        <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" class="logo-icon">
+          <path d="M12 21v-9"/><path d="M12 12c0-4 3-6 7-6 0 4-3 6-7 6z"/><path d="M12 14c0-3-2.5-5-6-5 0 3 2.5 5 6 5z"/>
+        </svg>
+        Harshini Nujella
+      </a>
+
+      <!-- Only visible on phones; main.js opens and closes the menu -->
+      <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+
+      <nav id="site-nav" class="site-nav">
+        <a href="#work">Work</a>
+        <a href="#now">Now</a>
+        <a href="#about">About</a>
+        <!-- Put your resume in this folder named resume.pdf -->
+        <a href="resume.pdf" class="btn btn-primary btn-small">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section id="top" class="container hero">
+      <div class="hero-text">
+        <p class="pixel-label">M.Eng. Data Science, UCLA, class of 2027</p>
+        <h1>Hi, I’m Harshini! I build AI and computer vision systems.</h1>
+        <p class="lead">
+          Data Science grad student at UCLA, CS&amp;E at UC Merced before that.
+          Research in Pandey’s Lab and the MERT lab.
+          [One line on what you want to work on next.]
+        </p>
+        <div class="button-row">
+          <a href="#work" class="btn btn-primary">See my work</a>
+          <a href="resume.pdf" class="btn btn-outline">Download resume</a>
+        </div>
+      </div>
+
+        <div class="hero-scene" role="button" tabindex="0" aria-pressed="false" aria-label="Pause the garden breeze" title="Click to pause the breeze">
+        <svg viewBox="0 0 120 80" shape-rendering="crispEdges" role="img" aria-label="Pixel garden with a fruit tree, a vegetable bed, sprouts and a tool shed">
+          <!-- sun -->
+          <rect x="98" y="8" width="7" height="7" fill="#E9B949"/>
+          <!-- ground -->
+          <rect x="0" y="56" width="120" height="24" fill="#7A9A5C"/>
+          <rect x="0" y="56" width="120" height="2" fill="#5E7F46"/>
+          <!-- fruit tree -->
+          <g class="sway sway-tree">
+            <rect x="14" y="36" width="4" height="20" fill="#6B4A2F"/>
+            <rect x="8" y="14" width="16" height="4" fill="#2F6B34"/>
+            <rect x="6" y="18" width="20" height="12" fill="#2F6B34"/>
+            <rect x="10" y="30" width="12" height="4" fill="#2F6B34"/>
+            <rect x="10" y="18" width="6" height="3" fill="#3F8443"/>
+            <rect x="10" y="22" width="2" height="2" fill="#C2523A"/>
+            <rect x="20" y="20" width="2" height="2" fill="#C2523A"/>
+            <rect x="16" y="27" width="2" height="2" fill="#C2523A"/>
+          </g>
+          <!-- eggplant bed: three plants, then the bed -->
+          <g class="sway sway-a">
+            <rect x="38" y="40" width="2" height="10" fill="#3F8443"/>
+            <rect x="35" y="40" width="3" height="2" fill="#3F8443"/>
+            <rect x="40" y="44" width="2" height="4" fill="#5B3A78"/>
+          </g>
+          <g class="sway sway-b">
+            <rect x="46" y="39" width="2" height="11" fill="#3F8443"/>
+            <rect x="48" y="40" width="3" height="2" fill="#3F8443"/>
+            <rect x="44" y="43" width="2" height="4" fill="#5B3A78"/>
+          </g>
+          <g class="sway sway-c">
+            <rect x="54" y="41" width="2" height="9" fill="#3F8443"/>
+            <rect x="51" y="42" width="3" height="2" fill="#3F8443"/>
+            <rect x="56" y="45" width="2" height="4" fill="#5B3A78"/>
+          </g>
+          <rect x="34" y="50" width="26" height="8" fill="#8A5A3B"/>
+          <rect x="34" y="50" width="26" height="2" fill="#A06C47"/>
+                    <!-- cherry tomato bed: three plants, then the bed -->
+          <g class="sway sway-b">
+            <rect x="70" y="38" width="1" height="14" fill="#3F8443"/>
+            <rect x="67" y="40" width="3" height="1" fill="#5FA35C"/>
+            <rect x="71" y="43" width="3" height="1" fill="#3F8443"/>
+            <rect x="68" y="47" width="2" height="1" fill="#5FA35C"/>
+            <rect x="72" y="40" width="2" height="2" fill="#D6402F"/>
+            <rect x="67" y="44" width="2" height="2" fill="#D6402F"/>
+          </g>
+          <g class="sway sway-c">
+            <rect x="78" y="36" width="1" height="16" fill="#3F8443"/>
+            <rect x="75" y="38" width="3" height="1" fill="#5FA35C"/>
+            <rect x="79" y="41" width="3" height="1" fill="#3F8443"/>
+            <rect x="76" y="45" width="2" height="1" fill="#5FA35C"/>
+            <rect x="80" y="38" width="2" height="2" fill="#D6402F"/>
+            <rect x="74" y="42" width="2" height="2" fill="#E8833A"/>
+            <rect x="80" y="45" width="2" height="2" fill="#D6402F"/>
+          </g>
+          <g class="sway sway-a">
+            <rect x="86" y="40" width="1" height="12" fill="#3F8443"/>
+            <rect x="83" y="42" width="3" height="1" fill="#5FA35C"/>
+            <rect x="87" y="44" width="2" height="1" fill="#3F8443"/>
+            <rect x="87" y="41" width="2" height="2" fill="#D6402F"/>
+            <rect x="84" y="46" width="2" height="2" fill="#D6402F"/>
+          </g>
+          <rect x="66" y="52" width="24" height="6" fill="#8A5A3B"/>
+          <rect x="66" y="52" width="24" height="2" fill="#A06C47"/>
+          <!-- tool shed -->
+          <rect x="95" y="29" width="18" height="3" fill="#6B3A24"/>
+          <rect x="93" y="32" width="22" height="4" fill="#6B3A24"/>
+          <rect x="95" y="36" width="18" height="20" fill="#B4552E"/>
+          <rect x="101" y="44" width="6" height="12" fill="#6B3A24"/>
+          <rect x="97" y="39" width="3" height="3" fill="#E4EEDD"/>
+          <!-- path -->
+          <rect x="24" y="62" width="4" height="2" fill="#B9A27A"/>
+          <rect x="32" y="66" width="4" height="2" fill="#B9A27A"/>
+          <rect x="40" y="70" width="4" height="2" fill="#B9A27A"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ===================== RESEARCH & PROJECTS ===================== -->
+    <section id="work" class="container section">
+      <div class="section-heading">
+        <p class="pixel-label">The harvest</p>
+        <h2>Research &amp; projects</h2>
+      </div>
+
+      <div class="card-grid">
+        <!-- AI Systems and Education Lab -->
+        <article class="packet packet-research">
+          <div class="packet-flap">
+            <span>Research</span>
+            <span>UC Merced</span>
+          </div>
+
+          <div class="packet-front">
+            <div class="packet-title">
+              <svg class="sprig" aria-hidden="true"><use href="#sprig-lavender"/></svg>
+              <h3>AI Systems and Education Lab</h3>
+              <svg class="sprig flip" aria-hidden="true"><use href="#sprig-lavender"/></svg>
+            </div>
+            <p class="packet-role">Undergraduate AI/ML Research Engineer</p>
+            <p class="packet-desc">Personalized feedback for intro programming students that tracks each student’s progress across submissions, built right into the student portal.</p>
+          </div>
+
+          <dl class="packet-back">
+            <div>
+              <dt>Yield</dt>
+              <dd class="yield">Piloted with 60 students, saving TAs 6 hours a week</dd>
+            </div>
+            <div>
+              <dt>Planted</dt>
+              <dd>May 2025 – Aug 2026</dd>
+            </div>
+            <div class="tools-row">
+              <dt>Grown with</dt>
+              <dd>
+                <ul class="card-tools" aria-label="Tools used">
+                  <li>LTI 1.3 / OIDC</li>
+                  <li>Microsoft Azure</li>
+                  <li>Python</li>
+                  <li>Flask</li>
+                  <li>Docker</li>
+                  <li>scikit-learn</li>
+                </ul>
+              </dd>
+            </div>
+          </dl>
+
+          <div class="packet-links">
+            <a href="https://github.com/nujellaharshini/Automatic-Feedback-Generation---Research">GitHub</a>
+            <a href="https://drive.google.com/file/d/1xUKgtVhhuY76L4MPwIjWmCCuYqbGu9wM/view?usp=sharing">Paper</a>
+          </div>
+        </article>
+
+        <!-- Owligator-->
+        <article class="packet packet-internship">
+          <div class="packet-flap">
+            <span>Internship</span>
+            <span>Owligator</span>
+          </div>
+
+          <div class="packet-front">
+            <div class="packet-title">
+              <svg class="sprig" aria-hidden="true"><use href="#sprig-broccoli"/></svg>
+              <h3>Owligator</h3>
+              <svg class="sprig flip" aria-hidden="true"><use href="#sprig-broccoli"/></svg>
+            </div>
+            <p class="packet-role">Machine Vision Intern</p>
+            <p class="packet-desc">An AI system that reads wine labels from across the room and updates inventory automatically, with a full-stack web app and a custom bottle detection model.</p>
+          </div>
+
+          <dl class="packet-back">
+            <div>
+              <dt>Yield</dt>
+              <dd class="yield">Cut manual inventory tracking by 80%, with 95% label accuracy from 10+ feet away</dd>
+            </div>
+            <div>
+              <dt>Planted</dt>
+              <dd>Jan 2025 – Aug 2025</dd>
+            </div>
+            <div class="tools-row">
+              <dt>Grown with</dt>
+              <dd>
+                <ul class="card-tools" aria-label="Tools used">
+                  <li>YOLOv8</li>
+                  <li>SAM</li>
+                  <li>OpenCV</li>
+                  <li>OCR</li>
+                  <li>React</li>
+                  <li>Flask</li>
+                </ul>
+              </dd>
+            </div>
+          </dl>
+
+          <div class="packet-links">
+            <a href="https://github.com/nujellaharshini/Owligator_CSE_120">GitHub</a>
+          </div>
+        </article>
+
+        <!-- Spot It! Solver -->
+        <article class="packet packet-project">
+          <div class="packet-flap">
+            <span>Project</span>
+            <span>UC Merced</span>
+          </div>
+
+          <div class="packet-front">
+            <div class="packet-title">
+              <svg class="sprig" aria-hidden="true"><use href="#sprig-rose"/></svg>
+              <h3>Spot It! Solver</h3>
+              <svg class="sprig flip" aria-hidden="true"><use href="#sprig-rose"/></svg>
+            </div>
+            <p class="packet-role">Game automation with machine vision</p>
+            <p class="packet-desc">Plays the card game Spot It! by finding the one matching symbol between two cards, using a YOLOv8 model trained on a dataset I annotated myself.</p>
+          </div>
+
+          <dl class="packet-back">
+            <div>
+              <dt>Yield</dt>
+              <dd class="yield">97.9% true positive rate on symbol detection</dd>
+            </div>
+            <div>
+              <dt>Planted</dt>
+              <dd>March 2025</dd>
+            </div>
+            <div class="tools-row">
+              <dt>Grown with</dt>
+              <dd>
+                <ul class="card-tools" aria-label="Tools used">
+                  <li>YOLOv8</li>
+                  <li>Python</li>
+                  <li>Data augmentation</li>
+                  <li>[Annotation tool]</li>
+                </ul>
+              </dd>
+            </div>
+          </dl>
+        </article>
+
+        <!-- AI Squared -->
+        <article class="packet packet-internship">
+          <div class="packet-flap">
+            <span>Internship</span>
+            <span>AI Squared</span>
+          </div>
+
+          <div class="packet-front">
+            <div class="packet-title">
+              <svg class="sprig" aria-hidden="true"><use href="#sprig-broccoli"/></svg>
+              <h3>AI Squared</h3>
+              <svg class="sprig flip" aria-hidden="true"><use href="#sprig-broccoli"/></svg>
+            </div>
+            <p class="packet-role">Cloud Technologies &amp; AI/ML Intern</p>
+            <p class="packet-desc">A chatbot that lets non-technical users manage SQL databases in plain English, plus a concept note for an MLOps platform presented to stakeholders.</p>
+          </div>
+
+          <dl class="packet-back">
+            <div>
+              <dt>Yield</dt>
+              <dd class="yield">Eliminated manual SQL command entry for non-technical users</dd>
+            </div>
+            <div>
+              <dt>Planted</dt>
+              <dd>May 2024 – Aug 2024</dd>
+            </div>
+            <div class="tools-row">
+              <dt>Grown with</dt>
+              <dd>
+                <ul class="card-tools" aria-label="Tools used">
+                  <li>Llama 2</li>
+                  <li>LangChain</li>
+                  <li>Hugging Face</li>
+                  <li>Python</li>
+                  <li>SQL</li>
+                </ul>
+              </dd>
+            </div>
+          </dl>
+        </article>
+
+      </div> <!-- end card-grid: every packet goes ABOVE this line -->
+    </section>
+    
+    <!-- ===================== CURRENTLY BUILDING ===================== -->
+    <section id="now" class="container section now">
+      <div class="section-heading centered">
+        <p class="pixel-label">Still sprouting</p>
+        <h2>Currently building</h2>
+      </div>
+
+      <div class="now-row">
+        <article class="card card-green">
+          <h3>Hand gesture control</h3>
+          <p>Controlling a laptop with hand gestures using classical CV, with a YOLO comparison next.</p>
+          <!-- Update this date whenever you push progress -->
+          <p class="watered">Last watered: [Date]</p>
+        </article>
+
+        <div class="sprout-pot">
+          <svg viewBox="0 0 40 60" shape-rendering="crispEdges" role="img" aria-label="A sprout growing in a pot">
+            <g class="sp-sway">
+              <rect class="sp-stem" x="19" y="20" width="2" height="23" fill="#3F8443"/>
+              <g class="sp-leaf-left">
+                <rect x="12" y="27" width="7" height="3" fill="#5FA35C"/>
+                <rect x="13" y="25" width="4" height="2" fill="#5FA35C"/>
+              </g>
+              <g class="sp-leaf-right">
+                <rect x="21" y="21" width="7" height="3" fill="#3F8443"/>
+                <rect x="23" y="19" width="4" height="2" fill="#5FA35C"/>
+              </g>
+              <g class="sp-bud">
+                <rect x="18" y="16" width="4" height="4" fill="#7CBF6E"/>
+              </g>
+            </g>
+            <!-- pot -->
+            <rect x="8" y="42" width="24" height="4" fill="#A44A28"/>
+            <rect x="11" y="42" width="18" height="2" fill="#5A3A26"/>
+            <rect x="10" y="46" width="20" height="12" fill="#B4552E"/>
+            <rect x="12" y="48" width="3" height="8" fill="#C46A42"/>
+          </svg>
+        </div>
+
+        <article class="card card-green">
+          <h3>[Current project 2]</h3>
+          <p>[What you are trying to figure out.]</p>
+          <p class="watered">Last watered: [Date]</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about" class="container section about">
+      <div class="about-text">
+        <p class="pixel-label">The gardener</p>
+        <h2>About me</h2>
+        <p>[Two or three sentences in your own voice: what pulls you toward AI and CV, and what you are like to work with.]</p>
+        <p>Off the keyboard, I garden. Right now I’m growing [plant], [plant] and [plant]. [One story about something that grew, or didn’t.]</p>
+      </div>
+
+      <div class="about-side">
+        <div class="card">
+          <h3 class="small-heading">Tool shed</h3>
+          <ul class="chips">
+            <li>YOLOv8</li>
+            <li>[Language]</li>
+            <li>[Framework]</li>
+            <li>[Tool]</li>
+            <li>[Tool]</li>
+          </ul>
+        </div>
+        <div class="card card-clay">
+          <h3 class="small-heading">Seed packets: learning next</h3>
+          <ul class="chips chips-square">
+            <li>Security+</li>
+            <li>AWS Cloud Practitioner</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== CONTACT / FOOTER ===================== -->
+  <footer id="contact" class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="pixel-label">The mailbox</p>
+        <h2>Let’s connect!</h2>
+      </div>
+      <div class="button-row">
+        <a href="mailto:[your-email]" class="btn btn-light">Email me</a>
+        <a href="https://www.linkedin.com/in/harshini-nujella-208841256/" class="btn btn-outline-light">LinkedIn</a>
+        <a href="https://github.com/nujellaharshini" class="btn btn-outline-light">GitHub</a>
+        <a href="resume.pdf" class="btn btn-outline-light">Resume</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
