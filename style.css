@@ -60,7 +60,7 @@ a:focus-visible, button:focus-visible {
 /* Small pixel-font labels above headings: the quiet garden theme */
 .pixel-label {
   font-family: var(--font-pixel);
-  font-size: 16px;
+  font-size: 18px;
   color: var(--muted);
   margin-bottom: 8px;
 }
@@ -293,6 +293,11 @@ a:focus-visible, button:focus-visible {
   justify-content: center;
 }
 .sprout-pot svg { width: 150px; height: 225px; }
+.sprout-pot { cursor: pointer; }
+.sprout-pot:focus-visible {
+  outline: 3px solid var(--leaf);
+  outline-offset: 4px;
+}
 
 /* Each part grows from its own bottom edge */
 .sp-sway, .sp-stem, .sp-leaf-left, .sp-leaf-right, .sp-bud {
@@ -343,18 +348,18 @@ a:focus-visible, button:focus-visible {
 .chips-square li { background: var(--surface); border-radius: 8px; }
 
 /* FOOTER */
-.site-footer { background: var(--ink); color: var(--ground); margin-top: 64px; }
-.site-footer .pixel-label { color: #B9C7B4; }
-.site-footer h2 { font-size: 40px; }
+.site-footer {
+  margin-top: 64px;
+  border-top: 1px solid var(--line);
+}
 .footer-inner {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 32px;
-  padding-top: 72px;
-  padding-bottom: 72px;
+  justify-content: center;
+  padding-top: 32px;
+  padding-bottom: 40px;
 }
+.footer-inner .btn { font-size: 13px; }
+.footer-inner .button-row .btn { flex: 0 0 auto; }
 
 /*PHONES (screens narrower) */
 @media (max-width: 720px) {
@@ -488,3 +493,21 @@ a:focus-visible, button:focus-visible {
   border-top: 1px solid var(--packet-line);
 }
 .packet-links a { font-weight: 600; padding: 6px 0; color: var(--packet-ink); }
+
+/* Plants that fall when you click my name */
+.falling-plant {
+  position: fixed;
+  top: -60px;
+  z-index: 50;
+  pointer-events: none;   /* never blocks clicks on the page underneath */
+  shape-rendering: crispEdges;
+  animation-name: fall;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fall {
+  0%   { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+  85%  { opacity: 1; }
+  100% { transform: translate(var(--drift), 110vh) rotate(var(--spin)); opacity: 0; }
+}

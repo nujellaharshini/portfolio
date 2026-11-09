@@ -59,3 +59,57 @@ garden.addEventListener('keydown', (event) => {
     toggleBreeze();
   }
 });
+
+// ---------- Click the sprout to make it grow again ----------
+const pot = document.querySelector('.sprout-pot');
+
+function regrow() {
+  nowSection.classList.remove('is-growing');
+  void pot.offsetWidth; // forces the browser to notice the removal before re-adding
+  nowSection.classList.add('is-growing');
+}
+
+pot.addEventListener('click', regrow);
+
+pot.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter' || event.key === ' ') {
+    event.preventDefault();
+    regrow();
+  }
+});
+
+const logo = document.querySelector('.logo');
+const plants = ['#sprig-lavender', '#sprig-sunflower', '#sprig-broccoli', '#sprig-rose'];
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const SVG_NS = 'http://www.w3.org/2000/svg';
+
+function dropPlants() {
+  // Skip for people who turned off motion, and don't pile up if someone clicks a lot
+  if (reduceMotion.matches) return;
+  if (document.querySelectorAll('.falling-plant').length > 36) return;
+
+  for (let i = 0; i < 14; i++) {
+    const svg = document.createElementNS(SVG_NS, 'svg');
+    svg.setAttribute('class', 'falling-plant');
+    svg.setAttribute('aria-hidden', 'true');
+
+    const use = document.createElementNS(SVG_NS, 'use');
+    use.setAttribute('href', plants[i % plants.length]); // cycles through all four plants
+    svg.appendChild(use);
+
+    // Each one its own size, starting spot, speed, drift and tilt
+    const size = 16 + Math.random() * 12;
+    svg.style.width = size + 'px';
+    svg.style.height = size * 2 + 'px';
+    svg.style.left = Math.random() * 100 + 'vw';
+    svg.style.animationDuration = 3 + Math.random() * 2.5 + 's';
+    svg.style.animationDelay = Math.random() * 0.8 + 's';
+    svg.style.setProperty('--drift', Math.random() * 80 - 40 + 'px');
+    svg.style.setProperty('--spin', Math.random() * 60 - 30 + 'deg');
+
+    document.body.appendChild(svg);
+    svg.addEventListener('animationend', () => svg.remove()); // clean up after landing
+  }
+}
+
+logo.addEventListener('click', dropPlants);
