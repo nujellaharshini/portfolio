@@ -79,6 +79,31 @@
       <rect x="0" y="11" width="2" height="1" fill="#5FA35C"/>
       <rect x="1" y="12" width="2" height="1" fill="#3F8443"/>
     </symbol>
+    
+    <symbol id="sprig-sunflower" viewBox="0 0 8 16">
+      <!-- petals -->
+      <rect x="2" y="0" width="4" height="1" fill="#F2B630"/>
+      <rect x="1" y="1" width="6" height="1" fill="#F2B630"/>
+      <rect x="0" y="2" width="8" height="3" fill="#F2B630"/>
+      <rect x="1" y="5" width="6" height="1" fill="#F2B630"/>
+      <rect x="2" y="6" width="4" height="1" fill="#F2B630"/>
+      <rect x="1" y="1" width="1" height="1" fill="#D9921C"/>
+      <rect x="6" y="1" width="1" height="1" fill="#D9921C"/>
+      <rect x="0" y="3" width="1" height="1" fill="#D9921C"/>
+      <rect x="7" y="3" width="1" height="1" fill="#D9921C"/>
+      <rect x="1" y="5" width="1" height="1" fill="#D9921C"/>
+      <rect x="6" y="5" width="1" height="1" fill="#D9921C"/>
+      <!-- center -->
+      <rect x="2" y="2" width="4" height="3" fill="#6B3A24"/>
+      <rect x="3" y="3" width="1" height="1" fill="#8A5A3B"/>
+      <rect x="5" y="2" width="1" height="1" fill="#8A5A3B"/>
+      <!-- stem and leaves -->
+      <rect x="3" y="7" width="1" height="9" fill="#3F6B2F"/>
+      <rect x="5" y="9" width="2" height="1" fill="#5FA35C"/>
+      <rect x="4" y="10" width="3" height="1" fill="#3F8443"/>
+      <rect x="1" y="11" width="2" height="1" fill="#5FA35C"/>
+      <rect x="0" y="12" width="3" height="1" fill="#3F8443"/>
+    </symbol>
   </svg>
 
   <!-- ===================== HEADER / NAV ===================== -->
@@ -112,11 +137,6 @@
       <div class="hero-text">
         <p class="pixel-label">M.Eng. Data Science, UCLA, class of 2027</p>
         <h1>Hi, I’m Harshini! I build AI and computer vision systems.</h1>
-        <p class="lead">
-          Data Science grad student at UCLA, CS&amp;E at UC Merced before that.
-          Research in Pandey’s Lab and the MERT lab.
-          [One line on what you want to work on next.]
-        </p>
         <div class="button-row">
           <a href="#work" class="btn btn-primary">See my work</a>
           <a href="resume.pdf" class="btn btn-outline">Download resume</a>
@@ -255,8 +275,53 @@
           </div>
         </article>
 
+        <!-- Wan Du Research Lab (Aug 2024 – May 2025) -->
+        <article class="packet packet-research">
+          <div class="packet-flap">
+            <span>Research</span>
+            <span>UC Merced</span>
+          </div>
+
+          <div class="packet-front">
+            <div class="packet-title">
+              <svg class="sprig" aria-hidden="true"><use href="#sprig-lavender"/></svg>
+              <h3>DOE-MSIPP Research Lab</h3>
+              <svg class="sprig flip" aria-hidden="true"><use href="#sprig-lavender"/></svg>
+            </div>
+            <p class="packet-role">ML Modeling &amp; Pollutant Data Processing</p>
+            <p class="packet-desc">A Raspberry Pi system equipped with various environmental sensors remotely collected environmental data. We used this data to train and evaluate forecasting, regression, and classification models, helping us better understand pollutant behavior and make data-driven predictions of contamination across larger areas.</p>
+          </div>
+
+          <dl class="packet-back">
+            <div>
+              <dt>Yield</dt>
+              <dd class="yield">Presented at WM Symposia 2025, a Department of Energy–affiliated conference, and at UC Merced Research Week. </dd>
+            </div>
+            <div>
+              <dt>Planted</dt>
+              <dd>Aug 2024 – May 2025</dd>
+            </div>
+            <div class="tools-row">
+              <dt>Grown with</dt>
+              <dd>
+                <ul class="card-tools" aria-label="Tools used">
+                  <li>Python</li>
+                  <li>AWS</li>
+                  <li>Pandas</li>
+                  <li>Linux</li>
+                  <li>SQL</li>
+                  <li>Raspberry Pi</li>
+                  <li>D3.js</li>
+                  <li>REST APIs</li>
+                </ul>
+              </dd>
+            </div>
+          </dl>
+        </article>
+
         <!-- Owligator-->
-        <article class="packet packet-internship">
+        <!-- <article class="packet packet-internship"> -->
+        <article class="packet packet-internship new-row">
           <div class="packet-flap">
             <span>Internship</span>
             <span>Owligator</span>
@@ -269,7 +334,7 @@
               <svg class="sprig flip" aria-hidden="true"><use href="#sprig-broccoli"/></svg>
             </div>
             <p class="packet-role">Machine Vision Intern</p>
-            <p class="packet-desc">An AI system that reads wine labels from across the room and updates inventory automatically, with a full-stack web app and a custom bottle detection model.</p>
+            <p class="packet-desc">An AI-powered wine label extraction system, designing and implementing solutions across web and mobile platforms to automate inventory management and significantly reduce manual tracking errors.</p>
           </div>
 
           <dl class="packet-back">
@@ -291,6 +356,7 @@
                   <li>OCR</li>
                   <li>React</li>
                   <li>Flask</li>
+                  <li>Raspberry Pi</li>
                 </ul>
               </dd>
             </div>
@@ -299,46 +365,6 @@
           <div class="packet-links">
             <a href="https://github.com/nujellaharshini/Owligator_CSE_120">GitHub</a>
           </div>
-        </article>
-
-        <!-- Spot It! Solver -->
-        <article class="packet packet-project">
-          <div class="packet-flap">
-            <span>Project</span>
-            <span>UC Merced</span>
-          </div>
-
-          <div class="packet-front">
-            <div class="packet-title">
-              <svg class="sprig" aria-hidden="true"><use href="#sprig-rose"/></svg>
-              <h3>Spot It! Solver</h3>
-              <svg class="sprig flip" aria-hidden="true"><use href="#sprig-rose"/></svg>
-            </div>
-            <p class="packet-role">Game automation with machine vision</p>
-            <p class="packet-desc">Plays the card game Spot It! by finding the one matching symbol between two cards, using a YOLOv8 model trained on a dataset I annotated myself.</p>
-          </div>
-
-          <dl class="packet-back">
-            <div>
-              <dt>Yield</dt>
-              <dd class="yield">97.9% true positive rate on symbol detection</dd>
-            </div>
-            <div>
-              <dt>Planted</dt>
-              <dd>March 2025</dd>
-            </div>
-            <div class="tools-row">
-              <dt>Grown with</dt>
-              <dd>
-                <ul class="card-tools" aria-label="Tools used">
-                  <li>YOLOv8</li>
-                  <li>Python</li>
-                  <li>Data augmentation</li>
-                  <li>[Annotation tool]</li>
-                </ul>
-              </dd>
-            </div>
-          </dl>
         </article>
 
         <!-- AI Squared -->
@@ -382,8 +408,124 @@
           </dl>
         </article>
 
+        <!-- Spot It! Solver -->
+        <article class="packet packet-project new-row">
+          <div class="packet-flap">
+            <span>Project</span>
+            <span>UC Merced</span>
+          </div>
+
+          <div class="packet-front">
+            <div class="packet-title">
+              <svg class="sprig" aria-hidden="true"><use href="#sprig-rose"/></svg>
+              <h3>Spot It! Solver</h3>
+              <svg class="sprig flip" aria-hidden="true"><use href="#sprig-rose"/></svg>
+            </div>
+            <p class="packet-role">Game automation with machine vision</p>
+            <p class="packet-desc">Plays the card game Spot It! by finding the one matching symbol between two cards, using a YOLOv8 model trained on a dataset I annotated myself.</p>
+          </div>
+
+          <dl class="packet-back">
+            <div>
+              <dt>Yield</dt>
+              <dd class="yield">97.9% true positive rate on symbol detection</dd>
+            </div>
+            <div>
+              <dt>Planted</dt>
+              <dd>March 2025</dd>
+            </div>
+            <div class="tools-row">
+              <dt>Grown with</dt>
+              <dd>
+                <ul class="card-tools" aria-label="Tools used">
+                  <li>YOLOv8</li>
+                  <li>Python</li>
+                  <li>Data augmentation</li>
+                  <li>Roboflow</li>
+                </ul>
+              </dd>
+            </div>
+          </dl>
+        </article>
+
+        <!-- iFocus -->
+        <article class="packet packet-project">
+          <div class="packet-flap">
+            <span>Project</span>
+            <span>Where: CSE 155 course</span>
+          </div>
+
+          <div class="packet-front">
+            <div class="packet-title">
+              <svg class="sprig" aria-hidden="true"><use href="#sprig-rose"/></svg>
+              <h3>iFocus</h3>
+              <svg class="sprig flip" aria-hidden="true"><use href="#sprig-rose"/></svg>
+            </div>
+            <p class="packet-role">Focus-aware homework tool for elementary classrooms</p>
+            <p class="packet-desc">Students read or watch assigned material while taking notes, then get resources from Khan Academy, YouTube, and worksheets based on where they slowed down. In the end of an assignment, teachers get a gaze heatmap showing what held attention and where focus drifted.</p>
+          </div>
+
+          <dl class="packet-back">
+            <div>
+              <dt>Yield</dt>
+              <dd class="yield">Result: Built in 5 weeks by a team of 4</dd>
+            </div>
+            <div>
+              <dt>Planted</dt>
+              <dd>Sep 2024 – Nov 2024</dd>
+            </div>
+            <div class="tools-row">
+              <dt>Grown with</dt>
+              <dd>
+                <ul class="card-tools" aria-label="Tools used">
+                  <li>WebGazer.js</li>
+                  <li>Hugging Face Transformers</li>
+                  <li>Flask</li>
+                  <li>Pandas</li>
+                  <li>JavaScript</li>
+                </ul>
+              </dd>
+            </div>
+          </dl>
+        </article>
+
+        <!-- CatCar (Mar 2023 – Present) -->
+        <article class="packet packet-startup">
+          <div class="packet-flap">
+            <span>Startup</span>
+            <!-- <span>UC Merced</span> -->
+          </div>
+
+          <div class="packet-front">
+            <div class="packet-title">
+              <svg class="sprig" aria-hidden="true"><use href="#sprig-sunflower"/></svg>
+              <h3>CatCar</h3>
+              <svg class="sprig flip" aria-hidden="true"><use href="#sprig-sunflower"/></svg>
+            </div>
+            <p class="packet-role">Co-founder</p>
+            <p class="packet-desc">A campus ride-sharing platform. We partnered with clubs and student organizations so students can get safe, lower-cost rides to off-campus events.</p>
+          </div>
+
+          <dl class="packet-back">
+            <div>
+              <dt>Yield</dt>
+              <dd class="yield">10+ drivers, 600+ students connected, and 150+ riders a month.</dd>
+            </div>
+            <div>
+              <dt>Planted</dt>
+              <dd>Mar 2023 – December 2025></dd>
+            </div>
+          </dl>
+
+          <div class="packet-links">
+            <a href="https://www.instagram.com/ucmerced.catcar/">Instagram</a>
+          </div>
+        </article>
+
       </div> <!-- end card-grid: every packet goes ABOVE this line -->
     </section>
+
+
     
     <!-- ===================== CURRENTLY BUILDING ===================== -->
     <section id="now" class="container section now">
@@ -441,28 +583,6 @@
         <p>Off the keyboard, I garden. Right now I’m growing [plant], [plant] and [plant]. [One story about something that grew, or didn’t.]</p>
       </div>
 
-      <div class="about-side">
-        <div class="card">
-          <h3 class="small-heading">Tool shed</h3>
-          <ul class="chips">
-            <li>YOLOv8</li>
-            <li>[Language]</li>
-            <li>[Framework]</li>
-            <li>[Tool]</li>
-            <li>[Tool]</li>
-          </ul>
-        </div>
-        <div class="card card-clay">
-          <h3 class="small-heading">Seed packets: learning next</h3>
-          <ul class="chips chips-square">
-            <li>Security+</li>
-            <li>AWS Cloud Practitioner</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  </main>
-
   <!-- ===================== CONTACT / FOOTER ===================== -->
   <footer id="contact" class="site-footer">
     <div class="container footer-inner">
@@ -471,7 +591,6 @@
         <h2>Let’s connect!</h2>
       </div>
       <div class="button-row">
-        <a href="mailto:[your-email]" class="btn btn-light">Email me</a>
         <a href="https://www.linkedin.com/in/harshini-nujella-208841256/" class="btn btn-outline-light">LinkedIn</a>
         <a href="https://github.com/nujellaharshini" class="btn btn-outline-light">GitHub</a>
         <a href="resume.pdf" class="btn btn-outline-light">Resume</a>

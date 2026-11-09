@@ -1,7 +1,3 @@
-/* =========================================================
-   COLORS & FONTS
-   Change a color here and it updates everywhere on the site.
-   ========================================================= */
 :root {
   --ground: #F3F5EE;      /* page background */
   --surface: #FFFFFF;     /* cards */
@@ -14,7 +10,7 @@
   --sky: #E4EEDD;         /* behind the garden and sprout */
   --clay-soft: #F6E6DD;   /* seed packets card */
   --clay-ink: #5A2711;
-  --sky-blue: #E1EAF5;    /* research tag */
+  --sky-blue: #E1EAF5;    
   --sky-blue-ink: #1E3F66;
 
   --font-heading: "Bricolage Grotesque", Inter, system-ui, sans-serif;
@@ -24,9 +20,6 @@
   --radius: 20px;
 }
 
-/* =========================================================
-   BASICS
-   ========================================================= */
 *, *::before, *::after { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
@@ -76,9 +69,8 @@ a:focus-visible, button:focus-visible {
 .section-heading h2 { font-size: 40px; }
 .section-heading.centered { text-align: center; }
 
-/* =========================================================
-   BUTTONS
-   ========================================================= */
+/* BUTTONS */
+
 .button-row { display: flex; flex-wrap: wrap; gap: 12px; }
 
 .btn {
@@ -103,9 +95,7 @@ a:focus-visible, button:focus-visible {
 .btn-outline-light { border-color: var(--ground); color: var(--ground); }
 .btn-outline-light:hover { background: var(--ground); color: var(--ink); }
 
-/* =========================================================
-   HEADER
-   ========================================================= */
+/* HEADER */
 .header-inner {
   display: flex;
   align-items: center;
@@ -154,9 +144,7 @@ a:focus-visible, button:focus-visible {
 }
 .menu-toggle svg { stroke: var(--ink); }
 
-/* =========================================================
-   HERO
-   ========================================================= */
+/* HERO */
 .hero {
   display: flex;
   flex-wrap: wrap;
@@ -210,13 +198,17 @@ a:focus-visible, button:focus-visible {
   outline-offset: 4px;
 }
 
-/* =========================================================
-   CARDS
-   ========================================================= */
+/* CARDS */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+  grid-template-columns: repeat(auto-fill, minmax(min(420px, 100%), 1fr));
   gap: 24px;
+  max-width: 950px;
+  margin: 0 auto;
+}
+.card-grid .new-row { 
+  grid-column-start: 1; 
 }
 
 .card {
@@ -281,9 +273,7 @@ a:focus-visible, button:focus-visible {
   color: var(--leaf-dark) !important;
 }
 
-/* =========================================================
-   CURRENTLY BUILDING + THE SPROUT
-   ========================================================= */
+/* CURRENTLY BUILDING + THE SPROUT */
 .now-row {
   display: flex;
   flex-wrap: wrap;
@@ -340,9 +330,7 @@ a:focus-visible, button:focus-visible {
   .is-growing .sp-bud, .is-growing .sp-sway { animation: none; }
 }
 
-/* =========================================================
-   ABOUT
-   ========================================================= */
+/* ABOUT */
 .about { display: flex; flex-wrap: wrap; gap: 32px; }
 .about-text { flex: 1 1 420px; display: flex; flex-direction: column; gap: 16px; }
 .about-text h2 { font-size: 40px; }
@@ -354,9 +342,7 @@ a:focus-visible, button:focus-visible {
 .chips li { padding: 7px 14px; background: var(--ground); border-radius: 999px; font-size: 14px; }
 .chips-square li { background: var(--surface); border-radius: 8px; }
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
+/* FOOTER */
 .site-footer { background: var(--ink); color: var(--ground); margin-top: 64px; }
 .site-footer .pixel-label { color: #B9C7B4; }
 .site-footer h2 { font-size: 40px; }
@@ -370,9 +356,7 @@ a:focus-visible, button:focus-visible {
   padding-bottom: 72px;
 }
 
-/* =========================================================
-   PHONES (screens narrower than 720px)
-   ========================================================= */
+/*PHONES (screens narrower) */
 @media (max-width: 720px) {
   .container { padding-left: 20px; padding-right: 20px; }
   .section { padding-top: 40px; padding-bottom: 40px; }
@@ -381,7 +365,7 @@ a:focus-visible, button:focus-visible {
   .menu-toggle { display: flex; }
   .header-inner { flex-wrap: wrap; }
   .site-nav {
-    display: none;            /* hidden until the menu button is tapped */
+    display: none;            
     width: 100%;
     flex-direction: column;
     align-items: stretch;
@@ -404,10 +388,7 @@ a:focus-visible, button:focus-visible {
   .packet-title h3 { font-size: 22px; }
 }
 
-/* =========================================================
-   SEED PACKET CARDS
-   packet-research = blue, packet-project = green
-   ========================================================= */
+/* SEED PACKET CARDS */
 .packet {
   --packet-bg: #d9e4f1;
   --packet-ink: #1E3F66;
@@ -434,6 +415,13 @@ a:focus-visible, button:focus-visible {
   --packet-accent: #9FC29A;
 }
 
+.packet-startup {
+  --packet-bg: #FDF4E3;
+  --packet-ink: #ce7304;
+  --packet-line: #EFD9B0;
+  --packet-accent: #E8B65A;
+}
+
 /* Dark band across the top, like a packet's folded flap */
 .packet-flap {
   display: flex;
@@ -446,8 +434,6 @@ a:focus-visible, button:focus-visible {
   font-size: 13px;
 }
 
-/* Front: centered title with a sprig on each side.
-   The background draws the stitched line under the flap. */
 .packet-front {
   display: flex;
   flex-direction: column;
